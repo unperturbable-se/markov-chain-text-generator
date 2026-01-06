@@ -61,7 +61,7 @@ struct Matrix
 
 Matrix& operator*(Matrix& a,Matrix& b)
 {
- if(a.col!=b.row)return a;
+ if(a.col!=b.row){cout<<"invalid matrix multiplication";return a;}
  Matrix* c=new Matrix(a.row,b.col);
  for(int i=0;i<c->row;i++)
  {
@@ -70,15 +70,13 @@ Matrix& operator*(Matrix& a,Matrix& b)
         long double sum=0;
         for(int k=0;k<a.row;k++)
         {
-            sum+=a.mat[i][k]*b.mat[k][j];
+            sum+=(a.mat[i][k]*b.mat[k][j]);
         }
         c->mat[i][j]=sum;
     }
  }
 
- #ifdef DEBUG
- cout<<"Result of [0,0] after multiplication:"<<c->mat[0][0]<<endl;
- #endif
+ //cout<<"Result of [0,0] after multiplication:"<<c->mat[0][0]<<endl;
  
  return *c;
 }
