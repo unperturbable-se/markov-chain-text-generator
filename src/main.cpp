@@ -104,7 +104,10 @@ int main()
     while(true)
     {
       cin>>input;
+      cout<<"\nsuggestion:";
+      //predictText(input,2,*markovChain);
       predictText1(input,2,*markovChain);
+      cout<<endl;
     }
     return 0;
 }
