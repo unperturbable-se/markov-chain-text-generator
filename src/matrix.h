@@ -70,7 +70,7 @@ Matrix& operator*(Matrix& a,Matrix& b)
         long double sum=0;
         for(int k=0;k<a.row;k++)
         {
-            sum+=a.mat[i][k]*b.mat[k][j];
+            sum+=(a.mat[i][k]*b.mat[k][j]);
         }
         c->mat[i][j]=sum;
     }
